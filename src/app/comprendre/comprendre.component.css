@@ -1,0 +1,19 @@
+#sujet{
+    font-weight: bold;
+}
+
+body{
+    font-family: 'PT Serif', serif;
+}
+
+h1 {
+    color: red;
+}
+
+h2{
+    color: blue;
+}
+
+p{
+    text-align: justify;
+}
