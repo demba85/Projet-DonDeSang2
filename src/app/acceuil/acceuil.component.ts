@@ -11,6 +11,8 @@ import { Subscription } from "rxjs/Subscription";
 })
 export class AcceuilComponent implements OnInit {
 
+   don = 'assets/images/dondesang.jpeg';
+
   GroupeAplus : Post[];
   postsSubscription: Subscription;
 

@@ -26,4 +26,12 @@ export class GroupeBPlusService {
     this.saveGroupeBplus();
     this.emitGroupeBplus();
   }
+
+  getBplus() {
+    firebase.database().ref('/GroupeBplus')
+      .on('value', (data) => {
+        this.GroupeBplus = data.val() ? data.val() : [];
+        this.emitGroupeBplus();
+      });
+  }
 }

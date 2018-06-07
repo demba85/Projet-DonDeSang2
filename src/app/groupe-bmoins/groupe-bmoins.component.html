@@ -1,7 +1,7 @@
 <div class="container col-md-8">
 
   <h2> Nouveau post</h2>
-  <form [formGroup]="OplusForm" (ngSubmit)="onSaveOplus()">
+  <form [formGroup]="BmoinsForm" (ngSubmit)="onSaveGroupeBmoins()">
     <div class="form-group">
       <label for="prenom">Prénom</label>
       <input type="text" class="form-control" id="prenom" formControlName="prenom">
@@ -24,7 +24,7 @@
     </div>
 
 
-    <button class="btn btn-success" [disabled]="OplusForm.invalid" type="submit">Envoyer
+    <button class="btn btn-success" [disabled]="BmoinsForm.invalid" type="submit">Envoyer
     </button>
   </form>
 </div>

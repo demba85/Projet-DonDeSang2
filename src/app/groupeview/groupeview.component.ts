@@ -27,5 +27,26 @@ export class GroupeviewComponent implements OnInit {
     this.router.navigate(['/view1']);
   }
 
+  onNewPostBmoins() {
+    this.router.navigate(['/view2']);
+  }
+
+
+  onNewPostOplus() {
+    this.router.navigate(['/view3']);
+  }
+
+
+  onNewPostAmoins() {
+    this.router.navigate(['/view4']);
+  }
+
+  onNewPostABplus() {
+    this.router.navigate(['/view5']);
+  }
+
+  onNewPostABmoins() {
+    this.router.navigate(['/view6']);
+  }
 
 }

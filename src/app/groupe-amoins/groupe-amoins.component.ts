@@ -2,19 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { Post } from "../models/post-model";
-import { GroupeOplusService } from '../services/groupe-oplus.service';
+import { GroupeBmoinsService } from '../services/groupe-b-moins.service';
 
 @Component({
-  selector: 'app-groupe-o-plus',
-  templateUrl: './groupe-o-plus.component.html',
-  styleUrls: ['./groupe-o-plus.component.css']
+  selector: 'app-groupe-amoins',
+  templateUrl: './groupe-amoins.component.html',
+  styleUrls: ['./groupe-amoins.component.css']
 })
-export class GroupeOPlusComponent implements OnInit {
+export class GroupeAmoinsComponent implements OnInit {
 
-  OplusForm: FormGroup;
+  AmoinsForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-    private groupeOplusService: GroupeOplusService,
+    private groupeBmoinsService: GroupeBmoinsService,
     private router: Router) {
   }
 
@@ -24,28 +24,28 @@ export class GroupeOPlusComponent implements OnInit {
   }
 
   initForm() {
-    this.OplusForm = this.formBuilder.group({
+    this.AmoinsForm = this.formBuilder.group({
       nom: ['', Validators.required],
       prenom: ['', Validators.required],
       age: ['', Validators.required],
       telephone: ['', Validators.required],
       // ville: ['', Validators.required],
-      groupe: ['O+', Validators.required]
+      groupe: ['A-', Validators.required]
 
     });
 
   }
 
-  onSaveOplus() {
-    const prenom = this.OplusForm.get('prenom').value;
-    const nom = this.OplusForm.get('nom').value;
-    const age = this.OplusForm.get('age').value;
-    const telephone = this.OplusForm.get('telephone').value;
+  onSaveGroupeAmoins() {
+    const prenom = this.AmoinsForm.get('prenom').value;
+    const nom = this.AmoinsForm.get('nom').value;
+    const age = this.AmoinsForm.get('age').value;
+    const telephone = this.AmoinsForm.get('telephone').value;
     // const ville = this.postForm.get('ville').value;
-    const groupe = this.OplusForm.get('groupe').value;
+    const groupe = this.AmoinsForm.get('groupe').value;
     const newPost = new Post(prenom, nom, age, telephone, groupe);
     console.log('Envoyé');
-    this.groupeOplusService.createNewPost(newPost);
+    this.groupeBmoinsService.createNewPost(newPost);
     this.router.navigate(['/acceuil']);
   }
 
